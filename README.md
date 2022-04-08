@@ -1,4 +1,5 @@
 # WSL Portproxy
+## Why
 Puts wsl on the public internet by running a netsh portproxy through an admin powershell, all within wsl.
 WSL2 runs within its own virtual network that only the local computer can connect to.
 
@@ -18,8 +19,7 @@ annoyance spawned this script.
 
 It runs an elevated powershell within a process to run the netsh.
 
----
-# Usage
+## Usage
 `$ ./wsl_portproxy`
 
 _** with no opts, default usage will automatically open the local wsl_ip on ports 80 and 443_
