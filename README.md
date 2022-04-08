@@ -1,9 +1,8 @@
 # WSL Portproxy
-## Why
 Puts wsl on the public internet by running a netsh portproxy through an admin powershell, all within wsl.
+## Why
+If you run an apache server on port 80 and connect to your public ip, you will time out, as
 WSL2 runs within its own virtual network that only the local computer can connect to.
-
-If you run an apache server on port 80 and connect to your public ip, you will time out.
 In order to get around this, you need to run this within an elevated powershell:
 ```powershell
 netsh interface portproxy add v4tov4 listenport=80 listenaddress=0.0.0.0 connectport=80 connectaddress=wsl_ip
