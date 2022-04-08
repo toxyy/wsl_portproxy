@@ -18,6 +18,7 @@ annoyance spawned this script.
 It runs an elevated powershell within a process to run the netsh.
 
 ---
+# Usage
 `$ ./wsl_portproxy`
 
 _** with no opts, default usage will automatically open the local wsl_ip on ports 80 and 443_
