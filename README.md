@@ -23,8 +23,8 @@ It runs an elevated powershell within a process to run the netsh.
 $ ./wsl_portproxy.sh -h
 Usage: wsl_portproxy [-a <addr>] [-p <port1,port2...>]
    eg: wsl_portproxy -p 80,8080,443
-   eg: wsl_portproxy -a 127.0.0.1 -p 80
-   eg: wsl_portproxy -a 127.0.0.1
+   eg: wsl_portproxy -a 172.12.34.56 -p 80
+   eg: wsl_portproxy -a 172.12.34.56
    eg: wsl_portproxy
 
    -a  IP to portproxy windows to.
@@ -37,6 +37,6 @@ Usage: wsl_portproxy [-a <addr>] [-p <port1,port2...>]
 _** with no opts, default usage will automatically open the local wsl_ip on ports 80 and 443_
 ```console
 $ ./wsl_portproxy.sh
-Windows portproxy started on 0.0.0.0:80 to 123.456.78.90:80
-Windows portproxy started on 0.0.0.0:443 to 123.456.78.90:443
+Windows portproxy started on 0.0.0.0:80 to 172.12.34.56:80
+Windows portproxy started on 0.0.0.0:443 to 172.12.34.56:443
 ```
