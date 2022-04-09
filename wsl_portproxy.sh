@@ -57,7 +57,9 @@ while getopts "a:p:h" opt; do
       else
         ports="$OPTARG"
       fi;;
-    h) help exit 0;;
+    h)
+      help
+      exit 0;;
     *) exit 0;;
   esac
 done
