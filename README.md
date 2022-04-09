@@ -1,7 +1,7 @@
 # WSL Portproxy
-Puts wsl on the public internet by running a netsh portproxy through an admin powershell, all within wsl.
+Puts WSL on the public internet by running a netsh portproxy through an admin powershell, all within WSL.
 
-This tool is intended to help me to use wsl as my apache server without having to interface with windows.
+This tool is intended to help me to use wsl as my Apache server without having to interface with Windows.
 ## Why
 If you run an apache server on port 80 and connect to your public ip, you will time out, as
 WSL2 runs within its own virtual network that only the local computer can connect to.
