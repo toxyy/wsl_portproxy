@@ -46,7 +46,6 @@ is_integer() {
   esac
 }
 
-# opts get parameter priority
 while getopts "a:p:h-:" opt; do
   error_pre="Illegal option -"
   # support long options: https://stackoverflow.com/a/28466267/519360
