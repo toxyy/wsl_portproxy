@@ -74,7 +74,7 @@ while getopts "a:p:h-:" opt; do
       exit 0;;
     ??*)
       echo "$error_pre-$opt"
-      exit 2;; # bad long option
+      exit 2;;  # bad long option
     ?) exit 2;; # bad short option (error reported via getopts)
   esac
 done
