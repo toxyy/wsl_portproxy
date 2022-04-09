@@ -19,7 +19,7 @@ annoyance spawned this script.
 It runs an elevated powershell within a process to run the netsh.
 
 ## Usage
-```sh
+```console
 $ ./wsl_portproxy.sh -h
 Usage: wsl_portproxy [-a <addr>] [-p <port1,port2...>]
    eg: wsl_portproxy -p 80,8080,443
@@ -35,7 +35,7 @@ Usage: wsl_portproxy [-a <addr>] [-p <port1,port2...>]
        Default ports: 80, 443
 ```
 _** with no opts, default usage will automatically open the local wsl_ip on ports 80 and 443_
-```sh
+```console
 $ ./wsl_portproxy.sh
 Windows portproxy started on 0.0.0.0:80 to 123.456.78.90:80
 Windows portproxy started on 0.0.0.0:443 to 123.456.78.90:443
