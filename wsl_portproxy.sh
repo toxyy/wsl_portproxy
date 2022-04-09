@@ -47,20 +47,36 @@ is_integer() {
 }
 
 # opts get parameter priority
-while getopts "a:p:h" opt; do
+while getopts "a:p:h-:" opt; do
+  error_pre="Illegal option -"
+  # support long options: https://stackoverflow.com/a/28466267/519360
+  if [ "$opt" = "-" ]; then   # long option: reformulate OPT and OPTARG
+    opt="${OPTARG%%=*}"       # extract long option name
+    OPTARG="${OPTARG#$opt}"   # extract long option argument (may be empty)
+    OPTARG="${OPTARG#=}"      # if long option argument, remove assigning `=`
+  fi
   case $opt in
-    a) ip="$OPTARG";;
-    p)
+    a | ip)
+      if [ -z "$OPTARG" ]; then
+        echo "$error_pre$opt"
+        exit 2
+      else
+        ip="$OPTARG"
+      fi;;
+    p | port)
       if ! is_integer "$OPTARG" || [ -z "$OPTARG" ]; then
-        echo "Ports must be a number"
-        exit 0
+        echo "Given ports must be numbers: $opt"
+        exit 2
       else
         ports="$OPTARG"
       fi;;
-    h)
+    h | help)
       help
       exit 0;;
-    *) exit 0;;
+    ??*)
+      echo "$error_pre-$opt"
+      exit 2;; # bad long option
+    ?) exit 2;; # bad short option (error reported via getopts)
   esac
 done
 shift $((OPTIND -1))
