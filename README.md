@@ -2,6 +2,24 @@
 Puts WSL on the public internet by running a netsh portproxy through an admin powershell, all within WSL.
 
 This tool was created to help use wsl as a public webserver without having to interface with Windows.
+# THIS IS NOW DEPRECATED
+If you use a portproxy to get WSL on the public internet, Windows will erase the headers needed to capture visitor IP.
+In order to get around this, you need to first install WSL preview:
+
+https://www.microsoft.com/store/productId/9P9TQF7MRM4R
+
+And then follow this guide to set WSL2 into bridge mode:
+
+https://github.com/microsoft/WSL/issues/4150#issuecomment-1018524753
+
+Windows does not have an easy way to make a DNAT, as Get-NetNat only shows SNATs. So, I could either make a reverse proxy
+server on apache on my Windows host, somehow find a DNAT solution (let me know if you find an easy one), one of a number
+of files that get bridges to work before MS added official support, and actual bridge support here.
+
+The only thing you need to do after this is portforward your ports on your router pointing towards the new WSL IP. It will
+be on your internal network and your router will see WSL, so it will all work properly, and you can now log your visitor IPs.
+
+# THE OLD README
 ## Why
 If you run an apache server on port 80 and connect to your public ip, you will time out, as
 WSL2 runs within its own virtual network that only the local computer can connect to.
