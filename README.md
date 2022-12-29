@@ -4,11 +4,7 @@ Puts WSL on the public internet by running a netsh portproxy through an admin po
 This tool was created to help use wsl as a public webserver without having to interface with Windows.
 # THIS IS NOW DEPRECATED
 If you use a portproxy to get WSL on the public internet, Windows will erase the headers needed to capture visitor IP.
-In order to get around this, you need to first install WSL preview:
-
-https://www.microsoft.com/store/productId/9P9TQF7MRM4R
-
-And then follow this guide to set WSL2 into bridge mode:
+In order to get around this, you need to follow this guide to set WSL2 into bridge mode:
 
 https://github.com/microsoft/WSL/issues/4150#issuecomment-1018524753
 
